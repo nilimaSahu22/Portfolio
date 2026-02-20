@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 185 30% 10%;
+    --foreground: 45 20% 90%;
+
+    --card: 185 25% 14%;
+    --card-foreground: 45 20% 90%;
+
+    --popover: 185 25% 14%;
+    --popover-foreground: 45 20% 90%;
+
+    --primary: 350 70% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 170 50% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 185 20% 18%;
+    --muted-foreground: 185 15% 55%;
+
+    --accent: 40 80% 60%;
+    --accent-foreground: 185 30% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 185 20% 22%;
+    --input: 185 20% 22%;
+    --ring: 350 70% 60%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 185 25% 12%;
+    --sidebar-foreground: 45 20% 90%;
+    --sidebar-primary: 350 70% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 185 20% 18%;
+    --sidebar-accent-foreground: 45 20% 90%;
+    --sidebar-border: 185 20% 22%;
+    --sidebar-ring: 350 70% 60%;
+
+    --pixel-font: 'Press Start 2P', monospace;
+    --body-font: 'Space Grotesk', sans-serif;
+
+    --yarn-pink: 340 65% 65%;
+    --yarn-teal: 170 50% 45%;
+    --yarn-gold: 40 80% 60%;
+    --yarn-lavender: 270 40% 70%;
+
+    --pixel-shadow: 3px 3px 0px hsl(185 30% 5%);
+    --pixel-shadow-sm: 2px 2px 0px hsl(185 30% 5%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--body-font);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--pixel-font);
+  }
+}
+
+@layer utilities {
+  .pixel-text {
+    font-family: var(--pixel-font);
+    text-shadow: var(--pixel-shadow-sm);
+  }
+
+  .pixel-border {
+    border: 3px solid;
+    box-shadow: var(--pixel-shadow);
+  }
+
+  .pixel-border-sm {
+    border: 2px solid;
+    box-shadow: var(--pixel-shadow-sm);
+  }
+
+  .yarn-pattern {
+    background-image: 
+      radial-gradient(circle at 20% 50%, hsl(var(--yarn-pink) / 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--yarn-teal) / 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 60% 80%, hsl(var(--yarn-lavender) / 0.06) 0%, transparent 50%);
+  }
+
+  .hover-pixel {
+    transition: transform 0.1s steps(2);
+  }
+
+  .hover-pixel:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px hsl(185 30% 5%);
+  }
+
+  @keyframes float-pixel {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .animate-float {
+    animation: float-pixel 3s steps(4) infinite;
+  }
+
+  @keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .animate-blink {
+    animation: blink-cursor 1s steps(1) infinite;
+  }
+
+  .note-grid {
+    background-image: 
+      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
