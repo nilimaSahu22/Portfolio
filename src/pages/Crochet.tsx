@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Scissors, Heart } from "lucide-react";
 
 const projects = [
@@ -46,6 +47,10 @@ const projects = [
 ];
 
 const Crochet = () => {
+  useEffect(() => {
+    document.title = "Nilima Sahu | Crochet";
+  }, []);
+
   return (
     <div className="min-h-screen yarn-pattern">
       <div className="container mx-auto px-6 pt-28 pb-16">

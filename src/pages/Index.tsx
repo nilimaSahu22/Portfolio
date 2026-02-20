@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import pixelSpiderman from "@/assets/pixel-spiderman.png";
 import pixelBatman from "@/assets/pixel-batman.png";
 import pixelIronman from "@/assets/pixel-ironman.png";
@@ -40,6 +41,10 @@ const interests = [
 ];
 
 const Index = () => {
+  useEffect(() => {
+    document.title = "Nilima Sahu";
+  }, []);
+
   return (
     <div className="min-h-screen yarn-pattern">
       {/* Hero Section */}

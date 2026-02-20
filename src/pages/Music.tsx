@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Music as MusicIcon, Headphones, Radio, Disc3 } from "lucide-react";
 
 const playlists = [
@@ -33,6 +34,10 @@ const favoriteArtists = [
 ];
 
 const MusicPage = () => {
+  useEffect(() => {
+    document.title = "Nilima Sahu | Music";
+  }, []);
+
   return (
     <div className="min-h-screen">
       <div className="container mx-auto px-6 pt-28 pb-16">

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { FileText, Calendar, ArrowRight } from "lucide-react";
 
 const blogPosts = [
@@ -28,6 +29,10 @@ const blogPosts = [
 ];
 
 const Blogs = () => {
+  useEffect(() => {
+    document.title = "Nilima Sahu | Blogs";
+  }, []);
+
   return (
     <div className="min-h-screen note-grid">
       <div className="container mx-auto px-6 pt-28 pb-16 max-w-3xl">
