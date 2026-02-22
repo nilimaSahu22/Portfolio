@@ -3,7 +3,7 @@ import pixelSpiderman from "@/assets/pixel-spiderman.png";
 import pixelBatman from "@/assets/pixel-batman.png";
 import pixelIronman from "@/assets/pixel-ironman.png";
 import pixelDeadpool from "@/assets/pixel-deadpool.png";
-import { Music, Scissors, Code, Terminal, Github, Linkedin, Mail } from "lucide-react";
+import { Music, Scissors, Code, Terminal, Github, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const heroes = [
@@ -63,14 +63,16 @@ const Index = () => {
               making playlists, or drawing pixel art superheroes.
             </p>
             <div className="flex gap-3 pt-2">
-              <a href="#" className="p-2 pixel-border-sm border-border hover-pixel rounded-sm text-muted-foreground hover:text-foreground">
+              <a href="https://github.com/nilimaSahu22" target="_blank" rel="noopener noreferrer" className="p-2 pixel-border-sm border-border hover-pixel rounded-sm text-muted-foreground hover:text-foreground">
                 <Github className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 pixel-border-sm border-border hover-pixel rounded-sm text-muted-foreground hover:text-foreground">
+              <a href="https://www.linkedin.com/in/nilima-sahu-62685b2ab/" target="_blank" rel="noopener noreferrer" className="p-2 pixel-border-sm border-border hover-pixel rounded-sm text-muted-foreground hover:text-foreground">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 pixel-border-sm border-border hover-pixel rounded-sm text-muted-foreground hover:text-foreground">
-                <Mail className="h-5 w-5" />
+              <a href="https://x.com/Nilima_Sahu_" target="_blank" rel="noopener noreferrer" className="p-2 pixel-border-sm border-border hover-pixel rounded-sm text-muted-foreground hover:text-foreground">
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.23H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
+                </svg>
               </a>
             </div>
           </div>
