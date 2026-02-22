@@ -6,8 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Index from "./pages/Index";
 import Blogs from "./pages/Blogs";
-import Crochet from "./pages/Crochet";
-import Music from "./pages/Music";
+import Rive from "./pages/Rive";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,8 +21,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/blogs" element={<Blogs />} />
-          <Route path="/crochet" element={<Crochet />} />
-          <Route path="/music" element={<Music />} />
+          <Route path="/rive" element={<Rive />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

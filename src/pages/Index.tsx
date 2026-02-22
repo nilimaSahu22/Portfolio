@@ -3,8 +3,66 @@ import pixelSpiderman from "@/assets/pixel-spiderman.png";
 import pixelBatman from "@/assets/pixel-batman.png";
 import pixelIronman from "@/assets/pixel-ironman.png";
 import pixelDeadpool from "@/assets/pixel-deadpool.png";
-import { Music, Scissors, Code, Terminal, Github, Linkedin } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Github, Linkedin, MapPin, Calendar } from "lucide-react";
+
+const experiences = [
+  {
+    role: "Full-Stack Developer",
+    company: "Innovun Global",
+    period: "Sept. 2025 — Present",
+    location: "Remote",
+    color: "border-yarn-pink",
+    tag: "text-yarn-pink",
+    points: [
+      "Engineered RESTful APIs for a CRM platform, handling core business logic including lead management, client tracking, and sales pipeline workflows",
+      "Built pixel-perfect, responsive front-end interfaces from design specs and integrated them with backend APIs, ensuring seamless data flow",
+      "Contributed to a 110% increase in client sales by delivering a CRM that streamlined operations and improved team productivity",
+      "Diagnosed and resolved critical production bugs, reducing system errors and improving overall platform stability",
+      "Collaborated with senior engineers to learn and apply critical system design principles including scalability patterns and API architecture",
+    ],
+  },
+  {
+    role: "Freelance Front-End Developer",
+    company: "DataInYourself",
+    period: "Aug. 2025 — Sept. 2025",
+    location: "Remote",
+    color: "border-yarn-teal",
+    tag: "text-yarn-teal",
+    points: [
+      "Designed and developed an educational website including a landing page and admin panel, supporting 1500+ monthly visitors at launch",
+      "Built a responsive interface using Next.js and Tailwind CSS, improving load speed by ~35% compared to a previous static site",
+      "Developed an admin dashboard that reduced content update time from hours to minutes",
+      "Ensured secure and efficient functionality, resulting in 0 reported downtime post-deployment",
+    ],
+  },
+  {
+    role: "Junior Front-End Developer — Internship",
+    company: "Dreamstudio",
+    period: "June 2025 — Aug. 2025",
+    location: "Remote",
+    color: "border-yarn-gold",
+    tag: "text-yarn-gold",
+    points: [
+      "Implemented modern UI features that improved user interactions and reduced bounce rates by ~15%",
+      "Debugged and optimized code, reducing reported UI bugs by ~20%",
+      "Collaborated in an Agile team of 6 developers and designers, ensuring consistent delivery across sprints",
+      "Contributed to reusable TypeScript components, accelerating new feature development by ~25%",
+    ],
+  },
+  {
+    role: "Front-End Developer",
+    company: "Bromine",
+    period: "Oct. 2024 — Dec. 2024",
+    location: "Remote",
+    color: "border-yarn-lavender",
+    tag: "text-yarn-lavender",
+    points: [
+      "Optimized web performance using lazy loading and Redux, decreasing page load time by ~30%",
+      "Integrated REST APIs to fetch and display dynamic content, improving data rendering speed by ~40%",
+      "Participated in Agile sprints, consistently completing 100% of assigned tasks within deadlines",
+    ],
+  },
+];
 
 const heroes = [
   { name: "Spiderman", img: pixelSpiderman },
@@ -13,32 +71,6 @@ const heroes = [
   { name: "Deadpool", img: pixelDeadpool },
 ];
 
-const interests = [
-  {
-    title: "Music",
-    icon: Music,
-    desc: "Beats, melodies & playlists that fuel my coding sessions.",
-    link: "/music",
-    color: "text-yarn-pink",
-    borderColor: "border-yarn-pink",
-  },
-  {
-    title: "Crochet",
-    icon: Scissors,
-    desc: "Handmade creations stitched with patience and love.",
-    link: "/crochet",
-    color: "text-yarn-teal",
-    borderColor: "border-yarn-teal",
-  },
-  {
-    title: "Blogs",
-    icon: Terminal,
-    desc: "Thoughts on tech, life, and everything in between.",
-    link: "/blogs",
-    color: "text-yarn-gold",
-    borderColor: "border-yarn-gold",
-  },
-];
 
 const Index = () => {
   useEffect(() => {
@@ -59,8 +91,8 @@ const Index = () => {
               <span className="animate-blink text-primary">_</span>
             </h1>
             <p className="text-lg text-muted-foreground font-body max-w-lg leading-relaxed">
-              I build things for the web — and when I'm not coding, you'll find me crocheting amigurumi,
-              making playlists, or drawing pixel art superheroes.
+              I build things for the web and when I'm not coding, you'll find me crocheting gifts,
+              making rive animation, or drawing pixel art superheroes.
             </p>
             <div className="flex gap-3 pt-2">
               <a href="https://github.com/nilimaSahu22" target="_blank" rel="noopener noreferrer" className="p-2 pixel-border-sm border-border hover-pixel rounded-sm text-muted-foreground hover:text-foreground">
@@ -104,7 +136,7 @@ const Index = () => {
       <section className="border-y-2 border-border bg-card/50">
         <div className="container mx-auto px-6 py-6">
           <div className="flex flex-wrap items-center justify-center gap-6">
-            {["React", "TypeScript", "Node.js", "Python", "PostgreSQL", "AWS", "Docker", "GraphQL"].map((tech) => (
+            {["Javascript", "TypeScript", "Python", "React", "Next.js", "React Query", "React Router", "Node.js", "Express.js", "PostgreSQL", "Prisma", "Docker", "HTML", "TailwindCSS", "ShadCN"].map((tech) => (
               <span key={tech} className="font-pixel text-[9px] text-muted-foreground hover:text-primary transition-colors cursor-default">
                 {tech}
               </span>
@@ -113,29 +145,50 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Interests Section */}
-      <section className="container mx-auto px-6 py-16">
-        <h2 className="font-pixel text-lg text-center text-foreground mb-12">
-          <span className="text-primary">&gt;</span> Explore My World
+
+      {/* Experience Section */}
+      <section className="container mx-auto px-6 py-16 max-w-3xl">
+        <h2 className="font-pixel text-lg text-foreground mb-12">
+          <span className="text-primary">&gt;</span> Experience
         </h2>
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {interests.map((item) => {
-            const Icon = item.icon;
-            return (
-              <Link
-                key={item.title}
-                to={item.link}
-                className={`pixel-border ${item.borderColor} rounded-sm bg-card p-6 hover-pixel group`}
-              >
-                <Icon className={`h-8 w-8 ${item.color} mb-4`} />
-                <h3 className="font-pixel text-sm text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground font-body">{item.desc}</p>
-                <span className="inline-block mt-4 font-pixel text-[9px] text-muted-foreground group-hover:text-primary transition-colors">
-                  [ enter ] →
-                </span>
-              </Link>
-            );
-          })}
+        <div className="relative space-y-6">
+          {/* Timeline line */}
+          <div className="absolute left-0 top-2 bottom-2 w-0.5 bg-border ml-[5px] hidden sm:block" />
+          {experiences.map((exp, i) => (
+            <div key={i} className="flex gap-6">
+              {/* Timeline dot */}
+              <div className="hidden sm:flex flex-col items-center pt-1.5 flex-shrink-0">
+                <div className={`w-3 h-3 border-2 ${exp.color} bg-background`} />
+              </div>
+              {/* Card */}
+              <div className={`flex-1 pixel-border ${exp.color} rounded-sm bg-card p-5 hover-pixel`}>
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
+                  <div>
+                    <h3 className="font-pixel text-[10px] text-foreground leading-relaxed">{exp.role}</h3>
+                    <span className={`font-pixel text-[9px] ${exp.tag}`}>{exp.company}</span>
+                  </div>
+                  <div className="flex flex-col items-start sm:items-end gap-1 flex-shrink-0">
+                    <div className="flex items-center gap-1 text-muted-foreground">
+                      <Calendar className="h-3 w-3" />
+                      <span className="font-pixel text-[7px]">{exp.period}</span>
+                    </div>
+                    <div className="flex items-center gap-1 text-muted-foreground">
+                      <MapPin className="h-3 w-3" />
+                      <span className="font-pixel text-[7px]">{exp.location}</span>
+                    </div>
+                  </div>
+                </div>
+                <ul className="space-y-2 border-t-2 border-border pt-3">
+                  {exp.points.map((point, j) => (
+                    <li key={j} className="flex gap-2 text-sm text-muted-foreground font-body leading-relaxed">
+                      <span className="text-primary mt-0.5 flex-shrink-0">▸</span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

@@ -1,11 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
-import { Music, Scissors, FileText, Home, Code } from "lucide-react";
+import { FileText, Home, Code, Layers } from "lucide-react";
 
 const navItems = [
   { path: "/", label: "Home", icon: Home },
   { path: "/blogs", label: "Blogs", icon: FileText },
-  { path: "/crochet", label: "Crochet", icon: Scissors },
-  { path: "/music", label: "Music", icon: Music },
+  { path: "/rive", label: "Rive", icon: Layers },
 ];
 
 const Navbar = () => {
